@@ -1,0 +1,11 @@
+{
+  "what": "Generative ambient that plays itself, and you can steer it: swap the sounds of the pads, bells, bass, beats, lead and air, guide where it goes, or let it wander through 8 worlds. 27 melodic effects, strum or play the lead on the keys. Works on older and newer FM-1s.",
+  "author": "Polystellarflow",
+  "kinds": [
+    "other"
+  ],
+  "play": "https://sparky480v.github.io/zenith-1/emu/",
+  "cheat": "https://sparky480v.github.io/zenith-1/manual/",
+  "image": "docs/card.png",
+  "color": "#FFB270"
+}
