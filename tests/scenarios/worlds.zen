@@ -1,0 +1,93 @@
+# the worlds: PRESETS picks one, each remembers its settings, SAVE held resets one, all saved
+# the title (ZENITH-1, by Polystellarflow) first: a button during it only skips it
+wait 4000
+wait 500
+expect piece 0
+expect world 0
+# Warm Space's pad down (the Pad page: ENV)
+tap ENV
+spin K1 -10
+expect par0 54
+# the next world: Cinematic, its recipe (tempo 58, a soft pulse, C Aeolian, strings)
+turn PRESET 1
+expect piece 1
+expect world 1
+expect par18 58
+expect par3 40
+expect par19 0
+expect par22 1
+expect pool 0x5AD
+wait 8000
+shot cinematic.png
+# and Lo-fi: a Rhodes, brushes, vinyl
+turn PRESET 1
+expect piece 2
+expect par22 3
+expect par30 1
+expect par48 38
+wait 20000
+expect pad_level >10
+# the pad's sound (the Pad page's second knob; we are on it), kept with the world
+expect view 2
+spin K2 -1
+expect par22 2
+wait 3000
+# back to Warm Space: as it was left
+turn PRESET -2
+expect par22 0
+expect piece 0
+expect par0 54
+spin K2 1
+expect par22 1
+turn PRESET 2
+expect par22 2
+turn PRESET -2
+expect par22 1
+# SAVE held: Warm Space's recipe again
+press SAVE
+wait 1700
+release SAVE
+expect par0 64
+expect par22 0
+expect store_writes 0
+# a tweak, saved, survives a reboot, on the world it was made on (the Bells page: ARP)
+tap ARP
+spin K1 5
+expect par1 57
+turn PRESET 6
+expect piece 6
+tap SAVE
+expect store_writes 1
+reboot
+wait 300
+expect piece 6
+turn PRESET 2
+expect piece 0
+expect par1 57
+# every world, a few seconds each, through the end and round
+turn PRESET 1
+wait 4000
+shot w1.png
+turn PRESET 1
+wait 4000
+turn PRESET 1
+wait 4000
+shot w3.png
+turn PRESET 1
+wait 4000
+turn PRESET 1
+wait 4000
+shot w5.png
+turn PRESET 1
+wait 4000
+turn PRESET 1
+wait 4000
+expect piece 7
+turn PRESET 1
+expect piece 0
+# AMB-1's project (another magic) is not read: the recipes
+storeamb
+reboot
+wait 300
+expect piece 0
+expect par0 64

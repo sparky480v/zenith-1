@@ -1,0 +1,24 @@
+# ZENITH-1's build settings (fm1-base's tools/build.py: ./build.sh)
+name = "ZENITH"                # the build's files: zenith.fwsc, zenith-X.Y.fwsc
+id_prefix = "FM-1_97"          # package identity: dev FM-1_9700, releases FM-1_97XXYYZZ
+usb_manufacturer = "ZENITH-1"
+usb_product = "ZENITH-1 FM-1"
+ble = false                    # ZENITH-1 never uses the radio
+usb_audio_in = true            # the music recordable over USB
+usb_audio_out = false
+headphones = true              # the jack: the speaker's limiter when nothing is plugged in
+words = "words.tsv"
+include = ["dsp"]
+o2 = ["dsp/zenith.c", "dsp/vis.c"]   # the engine and the picture, at -O2
+# the site (the local install page)
+tagline = "Generative ambient worlds for the FM-1"
+repo = "https://github.com/sparky480v/zenith-1"     # firmware.json only: change it if the repository lives elsewhere
+licence = "MPL-2.0"
+credits = "Built on AMB-1 by Charles Vestal, its engine, controls and structure; the picture from HADAL-1's; on fm1-base and felucca-bsp, from Felucca by Leo Kuroshita (Hugelton Instruments)."
+
+# firmware.json, for firmware hubs (fm1-base docs/FIRMWARE-JSON.md)
+author = "Polystellarflow"
+description = "ZENITH-1, by Polystellarflow, turns the M-VAVE FM-1 into a generative ambient machine, built on AMB-1. It plays itself from the moment it's switched on: breathing pads that bloom, shimmering bells on tape loops of unequal length, a gliding bass, quiet Euclidean percussion and a soft texture of air, through a tape echo, a long tape loop and a shimmering plate. Left alone it travels through the parts of a world, from era to era and from world to world, never the same twice. Eight worlds, more than forty sounds, an FX menu of 24 effects, and full-screen pictures that move with the music."
+tags = ["ambient", "generative"]
+install = "https://sparky480v.github.io/zenith-1/install/"   # (you install from the local page: make_install_page.sh)
+screenshot = "docs/img/screen-garden.png"

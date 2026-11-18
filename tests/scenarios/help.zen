@@ -1,0 +1,92 @@
+# buttons and the knobs: a held button (1.5: no cards) acts when let go; SAVE held on goes back to the recipe;
+# a few quick clicks are exact, a quick spin sweeps
+# the title (ZENITH-1, by Polystellarflow) first: a button during it only skips it
+wait 4000
+wait 300
+expect par0 64
+press REC
+wait 1000
+release REC
+wait 200
+expect frozen 1
+tap REC
+wait 200
+expect frozen 0
+tap ENV
+turn K1 3 10
+expect par0 67
+wait 500
+turn K1 -3 30
+expect par0 64
+wait 500
+turn K1 -12 10
+expect par0 0
+wait 500
+turn K1 2 100
+expect par0 2
+wait 1500
+press SAVE
+wait 1700
+release SAVE
+wait 200
+expect par0 64
+tap SEL
+turn K2 1 80
+wait 100
+shot space_turning.png
+# HOME + SELECT: the tempo, from any page
+press HOME
+turn SELECT 3 100
+release HOME
+expect par18 69
+expect view 15
+# HOME, HOME, HOME: the Garden, the Journey, the picture; any button wakes the pages
+tap HOME
+expect view 0
+tap HOME
+expect view 1
+tap HOME
+wait 500
+expect pic 1
+shot picture.png
+tap SEL
+wait 100
+expect pic 0
+expect view 0
+# EDIT: the next part; held, RANDOM (its card first)
+tap EDIT
+press EDIT
+wait 1700
+release EDIT
+wait 100
+# the pages, each button's in turn
+tap SEL
+expect view 15
+tap SEL
+expect view 16
+tap SEL
+expect view 17
+tap SEL
+expect view 15
+tap FX
+expect view 18
+shot fxmenu.png
+# FX again: back to the page it came from
+tap FX
+expect view 15
+tap FX
+expect view 18
+tap GLO
+tap GLO
+expect view 20
+tap GLO
+expect view 21
+tap GLO
+expect view 22
+tap GLO
+expect view 19
+# nothing touched for 30 s: the picture by itself; a knob: the pages
+wait 31000
+expect pic 1
+turn K1 1
+expect pic 0

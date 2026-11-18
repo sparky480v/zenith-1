@@ -1,0 +1,26 @@
+# RANDOM: EDIT held rolls new sounds and settings; SAVE held puts the world back to its recipe (the undo)
+wait 4000
+expect par0 64
+expect view 0
+press EDIT
+wait 1700
+release EDIT
+wait 300
+expect view 0
+expect playing 1
+shot random.png
+wait 3000
+press SAVE
+wait 1700
+release SAVE
+wait 300
+expect par0 64
+expect view 0
+# the Guide: GLO four times
+tap GLO
+tap GLO
+tap GLO
+tap GLO
+wait 200
+expect view 22
+shot guide.png

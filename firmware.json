@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "id": "zenith",
+  "name": "ZENITH-1",
+  "author": "Polystellarflow",
+  "license": "MPL-2.0",
+  "tagline": "Generative ambient worlds for the FM-1",
+  "description": "ZENITH-1, by Polystellarflow, turns the M-VAVE FM-1 into a generative ambient machine, built on AMB-1. It plays itself from the moment it's switched on: breathing pads that bloom, shimmering bells on tape loops of unequal length, a gliding bass, quiet Euclidean percussion and a soft texture of air, through a tape echo, a long tape loop and a shimmering plate. Left alone it travels through the parts of a world, from era to era and from world to world, never the same twice. Eight worlds, more than forty sounds, an FX menu of 24 effects, and full-screen pictures that move with the music.",
+  "tags": ["ambient", "generative"],
+  "install": "https://sparky480v.github.io/zenith-1/install/",
+  "source": "https://github.com/sparky480v/zenith-1",
+  "screenshot": "docs/img/screen-garden.png",
+  "hardware": {
+    "models": ["FM-1"],
+    "flash": ["856014", "B36014"],
+    "features": ["usb-audio-in", "screen-reader"]
+  },
+  "credits": "Built on AMB-1 by Charles Vestal, its engine, controls and structure; the picture from HADAL-1's; on fm1-base and felucca-bsp, from Felucca by Leo Kuroshita (Hugelton Instruments)."
+}

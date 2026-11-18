@@ -1,0 +1,52 @@
+# the keys are the scale: toggles, the root stays, three notes at least; modes and the root
+# the title (ZENITH-1, by Polystellarflow) first: a button during it only skips it
+wait 4000
+wait 300
+# Warm Space, D Lydian: D E F# G# A B C#. F#3 is key 1: take F# out (relative 4), and back
+tapkey 1
+expect pool 0xAC5
+tapkey 1
+expect pool 0xAD5
+# key 9 is D4: the root stays
+tapkey 9
+expect pool 0xAD5
+# the next mode: Mixolydian
+turn ALGO 1
+expect par20 4
+expect pool 0x6B5
+turn ALGO -1
+expect pool 0xAD5
+# the root up a tone (Setup page, KNOB 1): E Lydian
+tap GLO
+spin K1 2
+expect par19 4
+tap HOME
+wait 300
+expect root_now 4
+expect pool 0xAD5
+shot e_lydian.png
+# pentatonic minor, then strip it down to three notes and try a fourth removal
+turn ALGO 4
+expect par20 7
+expect pool 0x4A9
+# E pent min: E G A B D. Remove G (key 2 = G3) and A (key 4 = A3)
+tapkey 2
+tapkey 4
+expect pool 0x481
+# B (key 6): would leave two
+tapkey 6
+expect pool 0x481
+wait 300
+shot three.png
+# MIDI in, channel 1: A (note 57) back in
+midi 90 39 64
+wait 20
+expect pool 0x4A1
+expect dirty 1
+# the new scales: yo and pelog
+turn ALGO 1
+expect par20 8
+expect pool 0x2A5
+turn ALGO 1
+expect par20 9
+expect pool 0x18B

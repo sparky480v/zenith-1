@@ -1,0 +1,109 @@
+# the screen reader (fm1-reader, announce.c): a reader listens, and each page, knob, help card, button and
+# chord change is said once, in the screen's own text (the words file says it in full)
+# the title (ZENITH-1, by Polystellarflow) first: a button during it only skips it
+wait 4000
+wait 200
+listen
+wait 100
+said Garden page: Tempo 66, Evolve 35, Motion 55, Drift 45 seconds. World Warm Space, D Lydian, growing
+# (the garden follows, queued: the chord, how far to the next, the scale from the root up)
+listen
+where
+said Scale D, E, F#, Ab and A, B, C#
+# a page settles before it is said
+tap ENV
+wait 300
+said Pad page: Level 64, Sound Warm, Swell 70, Bright 45
+tap GLO
+wait 300
+said Setup page: Root D, Tune 0, MIDI out On, Lights On
+# a knob: its name and value, once it settles
+spin K2 3
+wait 300
+said Tune +3
+spin K4 1
+wait 300
+said Lights Keys
+spin K4 -1
+wait 300
+# SELECT turns the pages
+turn SELECT -4
+wait 300
+said Space page: Echo 40, Echo time 1 bar, Reverb 70, Size 88
+spin K2 -1
+wait 300
+said Echo time 1/2.
+tap HOME
+wait 300
+said Garden page
+spin K4 20
+wait 300
+said Drift 1 minute 17 seconds
+# HOME + SELECT: the tempo (the Garden's first knob says it)
+press HOME
+turn SELECT 2 200
+release HOME
+wait 300
+said Tempo 68
+# the keys: a note out of the scale and back in; the root stays
+tapkey w1
+said ADDED G
+tapkey w1
+said REMOVED G
+tapkey b3
+said REMOVED C#
+tapkey b3
+said ADDED C#
+tapkey w5
+said THE ROOT STAYS (SETUP)
+# the encoders: the mode, the piece (with its key and tempo)
+turn ALGO 1
+said MODE Mixolyd
+turn ALGO -1
+said MODE Lydian
+turn PRESET 1
+said WORLD Cinematic, C Aeolian, tempo 58
+wait 300
+unsaid Level
+turn PRESET -1
+said WORLD Warm Space, D Lydian, tempo 68
+wait 300
+# the buttons' messages, said once
+tap REC
+said FREEZE ON
+tap REC
+said FREEZE OFF
+tap PLAY
+said RESTING
+wait 300
+unsaid GROWING
+tap PLAY
+said GROWING
+wait 300
+unsaid RESTING
+tap OCT+
+said BELL OCTAVE +1
+tap OCT-
+said BELL OCTAVE 0
+tap EDIT
+said HOLD EDIT FOR RANDOM
+tap SAVE
+said SAVED
+wait 100
+# the chord moving by itself: queued (said after what is being said). Drift its shortest (on the Garden page)
+spin K4 -80
+wait 26000
+said Chord
+# a MIDI clock arriving, and start / stop from it
+midi FA 00 00
+midi F8 00 00
+wait 20
+said Tempo EXT
+midi FC 00 00
+wait 300
+said RESTING
+wait 1000
+said Tempo 68
+# WHERE: everything again
+where
+said Garden page: Tempo 68, Evolve 35, Motion 55, Drift 20 seconds. World Warm Space, D Lydian, resting
